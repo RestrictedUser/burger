@@ -1,16 +1,17 @@
 <div class="header-container">
-  <img id="hamburger-image" src="assets/img/burger.png" alt="Burger image.">
+  <img id="hamburger-image" src="assets/img/burger.gif" alt="Burger image.">
   <header>Eat-Da-Burger!</header>
 </div>
 
 <div class="main-container">
   <section id="available-hamburgers">
     <ul id="burger-list">
+
       {{#each burgers}}
         {{#unless this.devoured}}
           <li class="available-burger">
             <span class="burgers">
-              {{this.id}}
+              {{this.id}}.
               {{this.burger_name}}
             </span>
             <span id="devour-button">
@@ -29,7 +30,7 @@
       {{#each burgers}}
         {{#if this.devoured}}
           <li class="devour-burger">
-            {{this.id}}
+            {{this.id}}.
             {{this.burger_name}}
           </li>
         {{/if}}
@@ -50,3 +51,11 @@
 
   </section>
 </div>
+
+<footer>
+		<div class="container">
+			{{!-- <a href="/api/burger" style="font-size:50px;">Discover burgers</a> --}}
+			<span></span>
+			<a href="https://github.com/RestrictedUser/burger" target = "_blank" style="font-size:50px;">GitHub Repo</a>
+		</div>
+	</footer>

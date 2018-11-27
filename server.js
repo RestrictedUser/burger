@@ -1,6 +1,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
+var burger = require("./models/burger.js");
+
 
 var port = process.env.PORT || 3000;
 
@@ -24,6 +26,19 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/burgers_controller.js");
 
 app.use("/", routes);
+
+// currently working on showing burgers requested in an object throughapi/burger
+app.get("/api/burger", function(req, res){
+  
+  res.json(burger);
+});
+
+app.post("api/burger", function(req, res){
+  console.log(req.body.burger_name);
+  var user = req.body;
+
+  burger.push(user);
+});
 
 app.listen(port, function() {
   console.log("Listening on PORT " + port);
