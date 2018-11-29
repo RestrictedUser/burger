@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
   });
 });
 
-// Post new burger to database and refesh page to see it.
+// Post new burger to database 
 router.post("/", function(req, res) {
   burger.insertOne([
     "burger_name", "devoured"
@@ -28,7 +28,6 @@ router.post("/", function(req, res) {
 });
 
 // Mark burger as devoured in database.
-// Refresh page to move it to devoured list.
 router.put("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
