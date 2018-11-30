@@ -18,6 +18,7 @@ router.get("/", function(req, res) {
 
 // Post new burger to database 
 router.post("/", function(req, res) {
+ console.log(req.body);
   burger.insertOne([
     "burger_name", "devoured"
   ], [
